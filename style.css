@@ -1,11 +1,51 @@
-@charset
-* {
-    margin: 0%;
-    padding: 0%;
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background-image: url(img/kyan.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+
+#container { 
+        display: flex;
+        background-color: blue;
+        /* flex-wrap determina se o container flexível encolherá seus elementos, 
+        também é possível determinar 
+        de que maneira isso ocorre ou não*/
+        background-image: linear-gradient(to bottom,  rgb(26, 18, 143), rgb(00,00,00));
+        gap: 10px;
+        /* gap é o espaçamento entre os elementos flexíveis */
+        justify-content: center;
+        /* Utilizamos content utilizamos para quando ocorre wrap 
+        para quando ocorre wrap ou temos mais de uma linha 
+        ja o items, utilizamos quando não ocorre wrap ou temos apenas uma linha*/        
+}
+
+.quadrado{
+    background-color: rgb(245, 243, 243);
+    width: 150px;
+    height: 150px;
+    border: 5px solid rgb(43, 133, 250);
+    border-radius: 18px;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    flex-basis: 300px;
+    /* flex-basis determina o tamanho mínimo inicial dos elementos flexíveis*/
+}
+
+#quatro{
+    flex-grow: 3;
+    /* flex-grow determina o quanto o elemento irá crescer em relação aos outros elementos flexíveis, 
+    o tamanho padrão do flex-grow é 0. mas quando coloca 2 dobra o valor */
+    flex-shrink: 2;
+    /* flex-shrink determina o quanto o elemento irá encolher em relação aos outros elementos flexíveis */
+}
+
+#seis{
+    flex: 1 2 300px;
+    /* A propriedade flex é uma abreviação para flex-grow (1), flex-shrink (2) e flex-basis(300px).*/
 }
